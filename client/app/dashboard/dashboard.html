@@ -1,0 +1,39 @@
+ <!-- ###################### HEADER #################################### -->
+<!-- Toolbars or Navbars -->
+<div ng-include="'components/navbar/navbar.html'"></div>  
+
+<div class="container" id="chatview">
+  <div class="col-md-12">
+		<h1>Dashboard</h1>
+		<div class="container">
+      	
+      	<!-- ################################## Insert customdirective here ########################## -->
+    	<div class="leftDiv">
+        <array-display datamodel='dashData'></array-display>
+      </div>
+      <div class="rightDiv">
+        <databox apimodel=apiName ></databox>
+      </div>
+      <div class="midDiv">
+        <dragndrop cols-data='columndata' update-data='updatedata'></dragndrop>
+        <dnd-chart cols-data='columndata' update-data='updatedata'></dnd-chart>
+        <charts chart-model='chartmodel' chart-data='columndata' update-data='updatedata'></charts>
+      </div>
+      
+		<!-- ################################## Insert customdirective here ########################## -->
+       
+      </div>
+    </div>
+ </div>
+
+
+
+<!-- ################## FOOTER ######################################## -->
+<footer class="footer">
+  <div class="container">
+      <p>angular-fullstack-base |
+        <a href="https://twitter.com/merumman">@merumman</a> |
+         <a href="https://github.com/knofler/angular-fullstack-base/issues">Issues</a></p>
+  </div>
+ </footer>
+<!-- ################## END OF FOOTER ################################# -->

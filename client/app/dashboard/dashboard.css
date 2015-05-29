@@ -1,0 +1,22 @@
+.leftDiv{
+	float: left;
+	clear: right;
+	display: inline-block;
+	width: 400px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	/*background-color: red;*/
+}
+.rightDiv{
+	margin-top: 14px;
+	display: inline-block;
+	width: 650px;
+	margin-bottom: 10px;
+	/*background-color: grey;*/
+}
+.midDiv{
+	margin-top: 10px;
+	clear: both;
+	max-width: 1010px;
+	/*background-color: green;*/
+}

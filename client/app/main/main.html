@@ -1,0 +1,165 @@
+ <!-- ###################### HEADER #################################### -->
+<!-- Toolbars or Navbars -->
+<div ng-include="'components/navbar/navbar.html'"></div>   
+<!-- ********************* Single page applications Smooth scroll menu available ************************* -->
+<div class="container" id="smoothScrollMenu">
+  <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li> <a ng-click="scrollTo('home')" smooth-scroll target="home">Home</a></li>
+        <li> <a ng-click="scrollTo('about')" smooth-scroll target="about"> About</a></li>
+        <li> <a ng-click="scrollTo('services')" smooth-scroll target="services"> Services</a></li>
+        <li> <a ng-click="scrollTo('team')" smooth-scroll target="team">Team</a></li>
+        <li> <a ng-click="scrollTo('portfolio')" smooth-scroll target="portfolio"> Portfolio</a></li>
+        <li> <a ng-click="scrollTo('blog')" smooth-scroll target="blog"> Blog</a></li>
+        <li> <a ng-click="scrollTo('contact')" smooth-scroll target="contact"> Contact</a></li>
+       </ul>
+     </div><!--/.nav-collapse -->
+ </div>     
+<!-- ********************* Single page applications Smooth scroll menu available ************************* -->
+<!-- header divs and contents -->
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>FullStack!</h1>
+    <p class="lead">Rumman's Customized angular fullstack boilerplate.</p>
+    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
+  </div>
+ </header>
+<!-- ################## END OF HEADER ################################# -->
+
+
+<!-- ################## MAIN CONTAINER ################################ -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+  
+  <!-- ********************* Single page applications target container ************************* -->
+    <!-- ==== ABOUT ==== -->
+    <div class="container" id="about" name="about">
+        <div class="row white">
+        <br>
+          <h1 class="centered">A LITTLE ABOUT OUR TEAM</h1>
+          <hr>
+          
+          <div class="col-lg-6">
+            <p>We believe ideas come from everyone, everywhere. In fact, at BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design. We’re big believers in doing right by our neighbors. After all, we grew up in the Twin Cities and we believe this place has much to offer. So we do what we can to support the community we love.</p>
+          </div><!-- col-lg-6 -->
+          
+          <div class="col-lg-6">
+            <p>Over the past four years, we’ve provided more than $1 million in combined cash and pro bono support to Way to Grow, an early childhood education and nonprofit organization. Other community giving involvement throughout our agency history includes pro bono work for more than 13 organizations, direct giving, a scholarship program through the Minneapolis College of Art & Design, board memberships, and ongoing participation in the Keystone Club, which gives five percent of our company’s earnings back to the community each year.</p>
+          </div><!-- col-lg-6 -->
+        </div><!-- row -->
+       </div><!-- container -->
+  <!-- ********************* Single page applications target container ************************* -->
+
+      
+  <!-- ##############   Inserted polymer paper elements as a demo ################## -->
+    <paper-checkbox></paper-checkbox>
+  <!-- ***************************************************************************** -->
+
+  <!-- ##############  Insert polymer custom element whereever you like ############ -->
+    <my-element></my-element>
+  <!-- ***************************************************************************** -->
+
+
+
+  <!-- ##############  File Upload with multer  ############ -->
+    <h4>File upload with multer and busy boy</h4>
+    <div class="uploadFile">
+        <form id        =  "uploadForm"
+              enctype   =  "multipart/form-data"
+              action    =  "/uploads"
+              method    =  "post">
+          <input type="file" name="file" />
+          <input type="submit" value="Upload Image" name="submit">
+         </form>
+       </div>
+  <!-- ***************************************************************************** -->
+  
+
+  <!-- #########################################  Email sent with nodemailer  ################################### -->
+  
+  <!-- Pop email modal to send email -->
+  <h4>Email Box</h4>
+
+  <!-- Paper dialog will be displayed on click -->
+  <paper-dialog transition="core-transition-center" id="emailModal" backdrop closeSelector="[affirmative]" resizerIsPeer=false>
+     <!-- <input type="text" ng-model="myData" /> -->
+         <!-- *************************add task top card*************************** -->
+          <div class = "todoTask" >   
+            <div class="emailCardHead">Compose: 
+            </div>    
+            <div class = "cardBody">
+              <form horizontal layout >
+                <div>
+                <div>
+                  <paper-input-decorator label="To: " class="inputEmail" id="mailTo" error="Value must start with a number!">
+                     <input id="taskName" ng-model="formdata.mailTo" is="core-input">
+                     </paper-input-decorator>
+                 </div>
+                <div class="inputEmail">
+                  <paper-input-decorator label="Subject:" class="inputEmail" id="mailSubject" error="Value must start with a number!">
+                     <input id="taskDesc" ng-model="formdata.mailSubject" is="core-input">
+                     </paper-input-decorator>
+                     <p id="errMsg"></p>
+                 </div>
+                <div>
+                  <paper-autogrow-textarea label=" " id="a1">
+                    <textarea class="textAreaClass" id="t1" ng-model="formdata.mailText" placeholder="write short email"></textarea>
+                  </paper-autogrow-textarea>
+                 </div>
+                  <!-- use local ajax -->
+                  <div class="buttonAdd">
+                  <paper-button raised affirmative class="emailBtn" ng-click="sendMail()">Send</paper-button>
+                  <paper-button raised dismissive class="emailDraftBtn" ng-click="saveMail()">Draft</paper-button>
+                  <!-- use firebase connection -->
+                   <!-- <button on-click="{{addGoal}}">Add Goal</button> -->
+                  </div>
+                 </div>
+               </form>
+              </div>      
+              <div class = "cardFooterAdd" >
+               </div>   
+          </div>
+  </paper-dialog>
+  <!-- ***************************************************************************** -->
+
+  <button ng-click="mailModal()">Email Box</button>
+
+  <!-- ************************************************************************************************************* -->
+
+
+  <!-- ********************* Socket IO active demonstration ************************* -->
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li>
+          <a href="#" tooltip="{{thing.info}}">{{thing.name}}
+            <button type="button" class="close" ng-click="deleteThing(thing)">&times;</button>
+          </a>
+        </li>
+       </ul>
+     </div>
+   </div>
+      <form class="thing-form">
+      <label>Syncs in realtime across clients</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+        </span>
+      </p>
+     </form>
+  <!-- ********************* Socket IO active demonstration ************************* -->
+ </div>
+<!-- ################## END OF MAIN CONTAINER ######################### -->
+
+
+<!-- ################## FOOTER ######################################## -->
+<footer class="footer">
+  <div class="container">
+      <p>angular-fullstack-base |
+        <a href="https://twitter.com/merumman">@merumman</a> |
+         <a href="https://github.com/knofler/angular-fullstack-base/issues">Issues</a></p>
+  </div>
+ </footer>
+<!-- ################## END OF FOOTER ################################# -->

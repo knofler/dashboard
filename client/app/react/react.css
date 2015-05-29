@@ -1,0 +1,27 @@
+.dragDiv{
+   position: relative;
+   padding:15px;
+   margin: 5px;
+   border-radius:5px;
+   width:350px;
+   height:auto;
+   border: 1px solid #ddd;
+	cursor: pointer;
+	display:block;
+	font-size: 13px;
+	text-align: justify;
+	line-height: 20px
+	background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(left,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to right,  #eeeeee 0%,#cccccc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 */
+
+}
+
+.dragDiv:hover{
+	opacity: .4;
+}
