@@ -6,6 +6,7 @@ angular.module('serveMeApp')
       {'title': 'Home','link': '/'},
       {'title': 'Dashboard','link':'/dashboard'},
       {'title': 'Chart','link':'/chart'},
+      {'title': 'CSV','link':'/csv'},
       {'title': 'React','link':'/react'},
       {'title': 'Scroll','link':'/scroll'},
       {'title': 'Upload','link':'/upload'}
